@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemolif | Pintura y Decoración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primario: #00bcd4;
+            --color-oscuro: #263238;
+            --blanco: #ffffff;
+            --gris-claro: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            color: var(--color-oscuro);
+            line-height: 1.6;
+        }
+
+        .contenedor { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        /* ========== HEADER ========== */
+        header { 
+            background: var(--blanco); 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .header-flex { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+        .logo { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            color: var(--color-primario); 
+            font-family: 'Montserrat'; 
+            text-decoration: none;
+        }
+
+        .btn-tel { 
+            text-decoration: none; 
+            color: var(--color-oscuro); 
+            font-weight: 600; 
+            border: 2px solid var(--color-primario); 
+            padding: 0.5rem 1rem; 
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-tel:hover {
+            background: var(--color-primario);
+            color: var(--blanco);
+        }
+
+        /* ========== HERO ========== */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1562663474-6cbb3fee1c77?auto=format&fit=crop&w=1350&q=80');
+            height: 60vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+            background-size: cover; 
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat';
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== GALERÍA ========== */
+        .galeria { 
+            padding: 4rem 0; 
+            text-align: center; 
+            background: var(--gris-claro);
+        }
+
+        .galeria h2 {
+            font-family: 'Montserrat';
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .galeria > .contenedor > p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .grid-galeria { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 15px; 
+            margin-top: 2rem; 
+        }
+
+        .item-galeria {
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .item-galeria:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .item-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .item-galeria:hover img { 
+            transform: scale(1.1); 
+        }
+
+        /* ========== SERVICIOS ========== */
+        .servicios {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .servicios h2 {
+            font-family: 'Montserrat';
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .servicio-card {
+            padding: 2rem;
+            background: var(--gris-claro);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            background: var(--color-primario);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            font-family: 'Montserrat';
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .servicio-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ========== CONTACTO ========== */
+        .contacto {
+            padding: 4rem 0;
+            background: var(--color-oscuro);
+            color: white;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            font-family: 'Montserrat';
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contacto p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .botones-contacto {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-contacto {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-primario);
+        }
+
+        .btn-llamar {
+            background: var(--color-primario);
+            color: white;
+        }
+
+        .btn-llamar:hover {
+            background: transparent;
+            color: var(--color-primario);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            border-color: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background: transparent;
+            color: #25d366;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* ========== BOTÓN WHATSAPP FLOTANTE ========== */
+        .ws-float { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: #25d366; 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-decoration: none; 
+            font-size: 24px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .ws-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .galeria h2,
+            .servicios h2,
+            .contacto h2 {
+                font-size: 1.8rem;
+            }
+
+            .botones-contacto {
+                flex-direction: column;
+            }
+
+            .btn-contacto {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="contenedor header-flex">
+            <a href="#" class="logo">🎨 ANEMOLIF</a>
+            <a href="tel:+34622672064" class="btn-tel">📞 622 67 20 64</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="contenedor">
+            <h1>TU HOGAR, NUESTRO LIENZO</h1>
+            <p>Pintura profesional y acabados de lujo para transformar tus espacios</p>
+        </div>
+    </section>
+
+    <section class="galeria">
+        <div class="contenedor">
+            <h2>Nuestros Proyectos</h2>
+            <p>Descubre nuestros trabajos más destacados en pintura y decoración</p>
+            
+            <div class="grid-galeria">
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Pintura Interior 1"></div>
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Pintura Interior 2"></div>
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=600&q=80" alt="Decoración Premium"></div>
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1565193566173-7cda82f45f69?auto=format&fit=crop&w=600&q=80" alt="Acabados Especiales"></div>
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1572321714769-3b886da6fb62?auto=format&fit=crop&w=600&q=80" alt="Pintura Exterior"></div>
+                <div class="item-galeria"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80" alt="Diseño Interior"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicios">
+        <div class="contenedor">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-servicios">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🏠</div>
+                    <h3>Pintura Interior</h3>
+                    <p>Transformamos tus espacios interiores con colores vibrantes y acabados impecables que reflejan tu estilo.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🌄</div>
+                    <h3>Pintura Exterior</h3>
+                    <p>Protegemos y embellecemos las fachadas de tu hogar con pinturas resistentes a la intemperie.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">✨</div>
+                    <h3>Acabados Especiales</h3>
+                    <p>Texturas, efectos decorativos y terminaciones premium que dan personalidad única a tu espacio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto">
+        <div class="contenedor">
+            <h2>¿Listo para Transformar tu Hogar?</h2>
+            <p>Contáctanos hoy mismo y obtén una consulta gratuita. Nuestro equipo está listo para dar vida a tus ideas.</p>
+            <div class="botones-contacto">
+                <a href="tel:+34622672064" class="btn-contacto btn-llamar">📞 Llamar Ahora</a>
+                <a href="https://wa.me/34622672064?text=Hola%20Anemolif%2C%20quisiera%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="btn-contacto btn-whatsapp" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2026 Anemolif - Pintura y Decoración. Todos los derechos reservados. | 📞 +34 622 67 20 64</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/34622672064?text=Hola%20Anemolif%2C%20quisiera%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="ws-float" target="_blank" title="Enviar WhatsApp">W</a>
+
+</body>
+</html>
